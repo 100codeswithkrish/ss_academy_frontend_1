@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
 
 export default function AttendanceHistoryPage() {
   const [loading, setLoading] = useState(true);
@@ -9,11 +8,12 @@ export default function AttendanceHistoryPage() {
   useEffect(() => {
     const fetchAttendance = async () => {
       try {
-        const response = await axios.get(
+        const res = await fetch(
           "https://ss-academy-backend.onrender.com/attendance/student-history"
         );
-        if (response.data.success) {
-          setStudents(response.data.students);
+        const data = await res.json();
+        if (data.success) {
+          setStudents(data.students);
         } else {
           setError("Failed to fetch attendance data");
         }
@@ -28,31 +28,28 @@ export default function AttendanceHistoryPage() {
     fetchAttendance();
   }, []);
 
-  if (loading) {
+  if (loading)
     return (
       <div className="min-h-screen flex items-center justify-center">
         <p className="text-gray-700 text-lg">Loading attendance history...</p>
       </div>
     );
-  }
 
-  if (error) {
+  if (error)
     return (
       <div className="min-h-screen flex items-center justify-center">
         <p className="text-red-600 text-lg">{error}</p>
       </div>
     );
-  }
 
   const studentIds = Object.keys(students);
 
-  if (studentIds.length === 0) {
+  if (studentIds.length === 0)
     return (
       <div className="min-h-screen flex items-center justify-center">
         <p className="text-gray-700 text-lg">No attendance records found.</p>
       </div>
     );
-  }
 
   return (
     <div className="min-h-screen bg-gray-50 p-6">
