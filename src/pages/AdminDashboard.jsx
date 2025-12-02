@@ -58,6 +58,29 @@ export default function AdminDashboard() {
       color: "bg-gradient-to-r from-purple-500 to-purple-600",
       route: "/attendance",
     },
+    {
+      id: 3,
+      title: "Attendance History",
+      description:
+        "View attendance records, generate reports, and analyze data",
+      icon: (
+        <svg
+          className="w-10 h-10"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+          />
+        </svg>
+      ),
+      color: "bg-gradient-to-r from-green-500 to-green-600",
+      route: "/attendance-history",
+    },
   ];
 
   return (
@@ -88,8 +111,8 @@ export default function AdminDashboard() {
           </div>
         </header>
 
-        {/* Main Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {/* Main Cards - Changed to 3 columns for better layout */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {dashboardCards.map((card) => (
             <div
               key={card.id}
