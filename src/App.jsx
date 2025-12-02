@@ -3,7 +3,8 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import LoginPage from "./pages/LoginPage";
 import AttendancePage from "./pages/AttendancePage";
 import AdminDashboard from "./pages/AdminDashboard";
-import StudentPage from "./pages/StudentPage"; // ← NEW IMPORT
+import StudentPage from "./pages/StudentPage";
+import AttendanceHistory from "./pages/AttendanceHistoryPage"; // ← NEW IMPORT
 
 export default function App() {
   return (
@@ -14,9 +15,15 @@ export default function App() {
         {/* Admin Dashboard */}
         <Route path="/dashboard" element={<AdminDashboard />} />
         {/* Students Page */}
-        <Route path="/students" element={<StudentPage />} /> {/* ← NEW ROUTE */}
+        <Route path="/students" element={<StudentPage />} />
         {/* Batches / Attendance */}
         <Route path="/attendance" element={<AttendancePage />} />
+        {/* Attendance History */}
+        <Route
+          path="/attendance-history"
+          element={<AttendanceHistory />}
+        />{" "}
+        {/* ← NEW ROUTE */}
       </Routes>
     </BrowserRouter>
   );
