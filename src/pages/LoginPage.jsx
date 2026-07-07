@@ -45,7 +45,7 @@ export default function LoginPage() {
   return (
     <div className="min-h-screen flex bg-black text-white font-sans overflow-hidden">
       {/* LEFT SIDE — LOGIN SECTION WITH LOGO */}
-      <div className="w-full md:w-1/2 flex items-start justify-center pt-10 md:pt-20 p-8">
+      <div className="w-full flex items-start justify-center pt-10 md:pt-20 p-8">
         <div className="w-full max-w-md">
           {/* Logo above login box */}
           <div className="flex justify-center mb-6">
@@ -121,20 +121,5 @@ export default function LoginPage() {
           </div>
         </div>
       </div>
-
-      {/* RIGHT SIDE — OWNER PHOTO ONLY */}
-      <div className="hidden md:flex flex-col w-1/2 items-start justify-start pt-40 md:pt-50 p-8">
-        <div className="w-full flex justify-center">
-          {/* Owner Photo — aligned with login box top */}
-          <div className="w-[80%] max-w-md rounded-3xl overflow-hidden shadow-2xl border border-gray-700">
-            <img
-              src="/assets/owner-photo.jpg"
-              alt="Owner"
-              className="w-full h-full object-cover"
-            />
-          </div>
-        </div>
-      </div>
-    </div>
   );
 }
